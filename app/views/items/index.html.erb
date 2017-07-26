@@ -1,0 +1,33 @@
+<h1>Todo List</h1>
+
+<%= link_to 'New Todo List Item', new_item_path %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Completed</th>
+  </tr>
+
+  <% @items.each do |item| %>
+    <% unless item.completed %>
+      <tr>
+	<%= render partial: 'item', :locals => {:item => item} %>
+      </tr>
+    <% end %>
+  <% end %>
+
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Completed</th>
+  </tr>
+
+  <% @items.each do |item| %>
+    <% if item.completed %>
+      <tr>
+	<%= render partial: 'item', :locals => {:item => item} %>
+	      </tr>
+    <% end %>
+  <% end %>
+</table>

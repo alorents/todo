@@ -1,0 +1,18 @@
+<td><%= item.title %></td>
+<td><%= item.description %></td>
+<td>
+  <% if item.completed %>
+    <%= item.completed.strftime("%A, %b %d") %> 
+  <% else %>
+    No
+  <% end %>
+</td>
+
+<td><%= link_to 'Complete', complete_item_path(item), method: :post %></td>
+<td><%= link_to 'Edit', edit_item_path(item) %></td>
+<td>
+  <%= link_to 'Delete', item_path(item),
+      method: :delete,
+      data: { confirm: 'Are you sure?' } %>
+</td>
+

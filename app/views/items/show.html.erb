@@ -1,0 +1,21 @@
+<%= link_to 'Todo List', controller: 'items' %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @item.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @item.description %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+    <% if @item.completed %>
+      <%= @item.completed %>
+    <% else %>
+	No
+    <% end %>
+</p>
+
